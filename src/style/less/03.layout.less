@@ -8,10 +8,11 @@
 
 @header-bg: fade(#6d6aaa, 80%);
 @footer-bg: fade(#55568e, 80%);
-@body-bg: #efefef;
+@body-bg: #000;
 @nav-bg: #a2bee0;
-@content-bg: rgba(0, 0, 0, 0.2);
+@content-bg: fade(#000, 50%);
 @content-fore-color: #fff;
+
 html{
     font-size: 10px;
 } 
@@ -19,6 +20,7 @@ body {
     min-width: 1024px;
     background: @body-bg;
     font-size: 1.4rem;
+    overflow-x: hidden;
 }
 
 i{
@@ -49,7 +51,7 @@ i{
             font-size: 6rem;
             color: @content-fore-color;
             background-color: @content-bg;
-            padding: 5rem;
+            padding: 4rem 5rem;
             display: inline-block;
             margin-top: 10rem;
             font-weight: 100;
