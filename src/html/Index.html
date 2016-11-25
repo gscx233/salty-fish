@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Salty Fish</title>
-    <link rel="stylesheet" href="../style/css/index.css">
+    <link rel="stylesheet" href="../style/css/index.css">    
 </head>
 
-<body>    
+<body id="vue-app">
     <div class="bg-img"></div>
     <div class="header"></div>
     <div class="main-container">
-        
+
         <div class="content">
-            <div class="title">There is no spoon.</div>            
+            <div class="title">There is no spoon.</div>
         </div>
     </div>
     <!--<div class="footer"></div>-->
@@ -22,11 +22,11 @@
 <script src="../js/lib/require.js"></script>
 
 <script>
-    require(["jquery"], function ($) {
-        console.log($);
+    require(["jquery", "app/index"], function ($, index) {     
         var settings = {
             
         };
+        index.init();
     });
 </script>
 

@@ -1,6 +1,7 @@
 var require = {
     baseUrl:"../js",
     paths:{
-        "jquery":"lib/jquery"     
+        "jquery":"lib/jquery",
+        "vue" : "lib/vue.min"        
     }    
 } 

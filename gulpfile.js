@@ -16,6 +16,18 @@ gulp.task('less:watch', function(){
 });
 
 gulp.task('minifycss', function(){
+    gulp.src('src/font/**/*')
+    .pipe(gulp.dest('release/font/'));
+
+    gulp.src('src/html/**/*')
+    .pipe(gulp.dest('release/'));
+
+    gulp.src('src/img/**/*')
+    .pipe(gulp.dest('release/img/'));
+
+    gulp.src('src/js/**/*')
+    .pipe(gulp.dest('release/js/'));
+
     gulp.src('src/style/css/**/*.css')
     .pipe(minifycss())
     .pipe(gulp.dest('release/style/css'));
