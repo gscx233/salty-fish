@@ -2,6 +2,7 @@ var gulp = require("gulp"),
     sourcemaps = require("gulp-sourcemaps"),
     minifycss = require("gulp-clean-css"),
     less = require("gulp-less");
+    uglify = require("gulp-uglify");
     
 gulp.task('less', function(){
     gulp.src("src/style/less/**/*.less")
@@ -19,7 +20,7 @@ gulp.task('minifycss', function(){
     gulp.src('src/font/**/*')
     .pipe(gulp.dest('release/font/'));
 
-    gulp.src('src/html/**/*')
+    gulp.src('src/**/*.html')
     .pipe(gulp.dest('release/'));
 
     gulp.src('src/img/**/*')
@@ -33,8 +34,14 @@ gulp.task('minifycss', function(){
     .pipe(gulp.dest('release/style/css'));
 });
 
+gulp.task('compress', function(){
+    gulp.src('src/js/**/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('release/js/'));
+})
+
 gulp.task("default", ["less"]);
 
 gulp.task("watch", ["less:watch"]);
 
-gulp.task("release", ["less","minifycss"]);
+gulp.task("release", ["less","minifycss", "compress"]);
