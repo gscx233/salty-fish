@@ -3,31 +3,28 @@
 @import "01.reset.less";
 @import "02.site.less";
 @import "02.input.less";
-
-
-
 @header-bg: fade(#6d6aaa, 0%);
 @footer-bg: fade(#55568e, 80%);
 @body-bg: #000;
 @nav-bg: #a2bee0;
 @content-bg: fade(#000, 50%);
 @content-fore-color: #fff;
-
-html{
+html {
     font-size: 10px;
-} 
-body {    
+}
+
+body {
     min-width: 1024px;
     background: @body-bg;
     font-size: 1.4rem;
     overflow-x: hidden;
 }
 
-i{
+i {
     padding-right: 0.2em;
 }
 
-.bg-img{
+.bg-img {
     position: absolute;
     background: url(../../img/bg.jpg) no-repeat;
     background-size: cover;
@@ -38,24 +35,60 @@ i{
 }
 
 .header {
-    width: 100%; 
+    width: 100%;
     height: 6rem;
     background: @header-bg;
 }
- 
+
 .main-container {
     min-height: ~"calc(100vh - 12rem)";
-    width: 100%;    
+    width: 100%;
     .content {
         text-align: center;
-        .title{
-            font-size: 6rem;
+        .title {
             color: @content-fore-color;
-            background-color: @content-bg;
-            padding: 4rem 5rem;
+            position: relative;
+            perspective: 80rem;
+            transition: transform 1s;
+            width: 60rem;
+            height: 15rem;
             display: inline-block;
-            margin-top: 10rem;
-            font-weight: 100;
+            &:hover {
+                .front {
+                    transform: rotateY(180deg);
+                }
+                .back {
+                    transform: rotateY(0deg);
+                }
+            }
+            .front,
+            .back {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                transition: transform 1s;
+                backface-visibility: hidden;
+                background-color: @content-bg;
+                p {
+                    font-weight: 100;
+                }
+            }
+            .front {
+                transform: rotateY(360deg);
+                p {
+                    font-size: 6rem;
+                    line-height: 15rem;
+                }
+                
+            }
+            .back {
+                transform: rotateY(180deg);
+                p {
+                    font-size: 2rem;
+                    line-height: 4rem;
+                    margin: 2rem;
+                }
+            }
         }
     }
 }
@@ -63,5 +96,5 @@ i{
 .footer {
     height: 6rem;
     width: 100%;
-    background: @footer-bg;    
+    background: @footer-bg;
 }

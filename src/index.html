@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Salty Fish</title>
-    <link rel="stylesheet" href="style/css/index.css">    
+    <link rel="stylesheet" href="style/css/index.css">
 </head>
 
 <body id="vue-app">
@@ -13,18 +13,25 @@
     <div class="main-container">
 
         <div class="content">
-            <div class="title">There is no spoon.</div>
+            <div class="title">
+                <div class="front">
+                    <p>There is no spoon.</p>
+                </div>
+                <div class="back">
+                    <p>Do not try and bend the spoon. That's impossible. </p>
+                    <p>Instead only try to realize the truth.</p>
+                </div>
+            </div>
         </div>
-    </div>
-    <!--<div class="footer"></div>-->
+        <!--<div class="footer"></div>-->
 </body>
 <script src="js/config.js"></script>
 <script src="js/lib/require.js"></script>
 
 <script>
-    require(["jquery", "app/index"], function ($, index) {     
+    require(["jquery", "app/index"], function ($, index) {
         var settings = {
-            
+
         };
         index.init();
     });
