@@ -18,26 +18,26 @@ gulp.task('less:watch', function(){
 
 gulp.task('minifycss', function(){
     gulp.src('src/font/**/*')
-    .pipe(gulp.dest('release/font/'));
+    .pipe(gulp.dest('docs/font/'));
 
     gulp.src('src/**/*.html')
-    .pipe(gulp.dest('release/'));
+    .pipe(gulp.dest('docs/'));
 
     gulp.src('src/img/**/*')
-    .pipe(gulp.dest('release/img/'));
+    .pipe(gulp.dest('docs/img/'));
 
     gulp.src('src/js/**/*')
-    .pipe(gulp.dest('release/js/'));
+    .pipe(gulp.dest('docs/js/'));
 
     gulp.src('src/style/css/**/*.css')
     .pipe(minifycss())
-    .pipe(gulp.dest('release/style/css'));
+    .pipe(gulp.dest('docs/style/css'));
 });
 
 gulp.task('compress', function(){
     gulp.src('src/js/**/*.js')
     .pipe(uglify())
-    .pipe(gulp.dest('release/js/'));
+    .pipe(gulp.dest('docs/js/'));
 })
 
 gulp.task("default", ["less"]);
