@@ -9,6 +9,7 @@
 @nav-bg: #a2bee0;
 @content-bg: fade(#000, 50%);
 @content-fore-color: #fff;
+@title-border: fade(#AAA, 40%);
 html {
     font-size: 10px;
 }
@@ -53,6 +54,8 @@ i {
             width: 60rem;
             height: 15rem;
             display: inline-block;
+            border: 0.1rem solid @title-border;
+            margin-top: 8rem;
             &:hover {
                 .front {
                     transform: rotateY(180deg);
