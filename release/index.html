@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Salty Fish</title>
+    <link rel="stylesheet" href="style/css/index.css">
+</head>
+
+<body id="vue-app">
+    <div class="bg-img"></div>
+    <div class="header"></div>
+    <div class="main-container">
+
+        <div class="content">
+            <div class="title">
+                <div class="front">There is no spoon.</div>
+                <div class="back">Do not try and bend the spoon. That's impossible. Instead only try to realize the truth.</div>
+            </div>
+        </div>
+        <!--<div class="footer"></div>-->
+</body>
+<script src="js/config.js"></script>
+<script src="js/lib/require.js"></script>
+
+<script>
+    require(["jquery", "app/index"], function ($, index) {
+        var settings = {
+
+        };
+        index.init();
+    });
+</script>
+
+</html>
